@@ -1,4 +1,4 @@
-## Northstar Product Engineering — Team Atlas
+## Northstar Product Engineering — Team Meridian
 
 This repository is the shared engineering workspace for Team Meridian.
 
