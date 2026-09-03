@@ -8,7 +8,7 @@ This repository is the shared engineering workspace for Team Meridian.
 - Trinity Jade Falcon
 - Jeffrey Kotz
 - John Wilkinson
-- Student Name
+- Andrew Nguyen
 
 ## Purpose
 
