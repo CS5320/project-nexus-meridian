@@ -7,7 +7,7 @@ This repository is the shared engineering workspace for Team Meridian.
 - Julian Jaramillo
 - Trinity Jade Falcon
 - Jeffrey Kotz
-- Student Name
+- John Wilkinson
 - Student Name
 
 ## Purpose
