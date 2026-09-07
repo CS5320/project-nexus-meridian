@@ -41,6 +41,7 @@ class CustomerService:
         if not LegacyRoleChecks.can_manage(actor_role):
             raise PermissionError("not allowed")
 
+        # Validation style A
         if name is None or len(name.strip()) < 2:
             raise ValidationError("Customer name is required")
         if not re.match(r"^[^@]+@[^@]+\.[^@]+$", email or ""):
@@ -54,6 +55,8 @@ class CustomerService:
             tags=tags or [],
         )
         self.repository.save(customer)
+
+        # Direct dependency use; newer code uses domain events instead.
         self.notification_client.send(
             customer.email,
             f"Welcome to Atlas, {customer.name}!",
@@ -73,6 +76,7 @@ class CustomerService:
         if customer is None:
             raise CustomerNotFoundError(customer_id)
 
+        # Validation style B: similar rule, different exception and message.
         if new_email is None or "@" not in new_email or "." not in new_email:
             raise ValueError("invalid email address")
 
@@ -91,6 +95,7 @@ class CustomerService:
         customer_id: str,
         reason: str,
     ) -> bool:
+        # Yet another authorization path.
         actor = Actor(user_id="legacy-api", role=actor_role)
         try:
             self.authorization.require_customer_management(actor)
@@ -166,6 +171,7 @@ class CustomerService:
         actor_role: str,
         customer_id: str,
     ) -> str:
+        """Demonstrates a mild Law-of-Demeter-style smell."""
         if not LegacyRoleChecks.can_manage(actor_role):
             raise PermissionError("not allowed")
 
@@ -173,4 +179,5 @@ class CustomerService:
         if customer is None:
             raise CustomerNotFoundError(customer_id)
 
+        # Exposes formatting concerns and object internals in the service layer.
         return f"{customer.name} <{customer.email}> [{customer.tier.value}]"
