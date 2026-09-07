@@ -33,7 +33,11 @@ class CsvCustomerReport(CustomerReportStrategy):
 
 
 class LegacyCustomerReport:
-    """Older report generator preserved for compatibility."""
+    """Older report generator preserved for compatibility.
+
+    This class duplicates validation rules and mixes filtering, validation,
+    formatting, and policy decisions.
+    """
 
     def generate_active_customer_summary(self, customers: list[Customer]) -> str:
         lines = ["customer_id,name,email,active"]
