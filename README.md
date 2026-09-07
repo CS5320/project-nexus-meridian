@@ -1,4 +1,4 @@
-## Northstar Product Engineering — Team Meridian
+# Northstar Product Engineering — Team Meridian
 
 This repository is the shared engineering workspace for Team Meridian.
 
@@ -9,6 +9,16 @@ This repository is the shared engineering workspace for Team Meridian.
 - Jeffrey Kotz
 - John Wilkinson
 - Andrew Nguyen
+
+## START HERE: Nexus
+
+**For your current Northstar work, start with `nexus/`.**
+
+`nexus/` contains the basic Nexus codebase you are expected to inspect and work from at the beginning of the course.
+
+You may also see `nexus2/` in this repository. **Do not use or modify `nexus2/` until you are explicitly instructed to do so.** It is a later version of Nexus that will become relevant as the semester progresses.
+
+Remember the course code rule: **If the calendar does not say MODIFY, do not edit Nexus.** When the calendar says INSPECT, open, read, trace, and analyze the code without changing it.
 
 ## Purpose
 
